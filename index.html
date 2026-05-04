@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#000000">
+
+    <!-- iOS suporte -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" href="assets/icons/icon-32.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Jogo de Plataforma</title>
+</head>
+
+<body>
+    <canvas id="gameCanvas" width="1024" height="576"></canvas>
+
+    <div id="rotateMessage">
+        <p>Vire o celular para jogar</p>
+    </div>
+
+    <div id="mobileControls">
+        <button id="btnLeft">⬅</button>
+        <button id="btnRight">➡</button>
+        <button id="btnJump">⬆</button>
+        <button id="btnFullscreen">⛶</button>
+    </div>
+
+    <script src="js/sprite.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/game.js"></script>
+
+    <script>
+        document.getElementById("btnFullscreen").addEventListener("click", enableFullscreen);
+    </script>
+
+    <script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+    }
+    </script>
+
+</body>
+</html>
